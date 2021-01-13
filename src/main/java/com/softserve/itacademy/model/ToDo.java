@@ -73,4 +73,12 @@ public class ToDo {
     public void setOwner(User owner) {
         this.owner = owner;
     }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
 }

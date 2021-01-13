@@ -29,7 +29,8 @@ public class Task {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @NotBlank(message = "Priority cannot be empty")
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "priority", nullable = false, unique = true,  columnDefinition = "VARCHAR(255)")
     private Priority priority;
 
@@ -40,4 +41,40 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "todo_id", referencedColumnName = "id")
     private  ToDo todo;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public void setTodo(ToDo todo) {
+        this.todo = todo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public ToDo getTodo() {
+        return todo;
+    }
 }
